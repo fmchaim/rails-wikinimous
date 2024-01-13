@@ -1,0 +1,14 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @article.title %></h5>
+    <p class="card-text"><%= @article.content %></p>
+    <div>
+      <%= link_to edit_article_path(@article) do %>
+        <i class="fas fa-pencil-alt"></i> Edit
+      <% end %>
+      <%= link_to article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        <i class="fas fa-trash"></i> Delete
+      <% end %>
+    </div>
+  </div>
+</div>
